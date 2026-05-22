@@ -1,0 +1,33 @@
+'use client'
+
+import { CSSProperties, useEffect, useRef } from 'react'
+
+export default function ScrollReveal({ children, className = '', style }: {
+  children: React.ReactNode
+  className?: string
+  style?: CSSProperties
+}) {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add('visible')
+          obs.unobserve(el)
+        }
+      },
+      { threshold: 0.1 }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [])
+
+  return (
+    <div ref={ref} className={`reveal ${className}`} style={style}>
+      {children}
+    </div>
+  )
+}
