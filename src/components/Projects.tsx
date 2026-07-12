@@ -146,10 +146,10 @@ export default function Projects() {
           <MiniCard
             num="03"
             thumb="outline"
-            href="https://github.com/lisanottoli2023/histopathology-robustness-ihc"
-            eyebrow="ML / Computer Vision · Research"
-            name="Histopathology IHC"
-            desc="Robustness evaluation of deep learning models on IHC-stained histopathology images — domain shift, stain variability, and generalisation under distribution shift."
+            href="https://github.com/lisanottoli2023/Homepedia"
+            eyebrow="Data Engineering Real Estate project"
+            name="Homepedia"
+            desc="A data pipeline that fetch API and scrape real estate data, store it in a Postgres/Mongo database transform it with pySpark and can be visualized with a Next.js application." 
           />
 
               </div>
